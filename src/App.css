@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #333;
+  padding: 1em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Sayfa İçeriği */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 100px; /* Footer açıldığında içerikle çakışmasını önlemek için */
+}
+
+/* Footer Başlangıçta Gizli */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1.5em 0;
+  position: fixed;
+  width: 100%;
+  bottom: -100px; /* Başlangıçta aşağıda gizli */
+  transition: bottom 0.5s ease-in-out;
+}
+
+/* Sayfanın En Altına Gelindiğinde Footer Açılır */
+.show-footer {
+  bottom: 0;
+}

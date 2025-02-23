@@ -1,0 +1,101 @@
+.services {
+  text-align: center;
+  padding: 50px 20px;
+  background:linear-gradient(135deg, #141e30, #243b55);
+  margin-top: 20px;
+  margin-bottom: -100px;
+}
+
+.services-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+  background: linear-gradient(45deg, #ff9800, #ff7300);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 12px 25px;
+}
+
+.service-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;  /* Küçük ekranlarda düzgün hizalama */
+}
+
+.service {
+  background: rgba(255, 255, 255, 0.15); /* Cam efekti */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 400px; /* Hafif büyüt */
+  border-radius: 15px; /* Daha modern köşeler */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service:hover {
+  transform: translateY(-10px);
+}
+
+.service-icon {
+  color: #fc8f00;
+  margin-bottom: 10px;
+}
+
+.service h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.service p {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.service-btn {
+  background: linear-gradient(45deg, #ff9800, #ff7300);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.service-btn:hover {
+  background-color: #e68900;
+}
+
+/* Resim ve video bölümü */
+.service-details {
+  margin-top: 10px;
+  display: none;
+}
+
+.service.active .service-details {
+  display: block;
+  background: #070202;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Resim ayarları */
+.service-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Video ayarları */
+.service-video {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  margin-top: 10px;
+}

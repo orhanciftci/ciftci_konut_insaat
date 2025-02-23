@@ -1,0 +1,223 @@
+.projects-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 20px;
+  background:linear-gradient(135deg, #141e30, #243b55);
+  margin-top:20px ;
+  margin-bottom: -100px;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+  background: linear-gradient(45deg, #ff9800, #ff7300);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 12px 25px;
+}
+
+.projects-description {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.filter-buttons {
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  background: linear-gradient(45deg, #ff9800, #ff7300);;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  margin: 5px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-buttons button.active {
+  background-color: #ff9800;
+}
+
+filter-buttons button:hover {
+  background: linear-gradient(45deg, #ff7300, #ff9800); /* Hover efekti */
+  transform: scale(1.05); /* Hafif büyütme */
+}
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.15); /* Cam efekti */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 320px; /* Hafif büyüt */
+  border-radius: 15px; /* Daha modern köşeler */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-12px) scale(1.07); /* Daha belirgin hover efekti */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.project-title-hover {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  pointer-events: none;
+  display: none;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 2s ease-in-out; 
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.15); /* Resmin üzerine gelindiğinde büyümesi */
+  opacity: 0.9;
+  transition: transform 1.9s ease-in-out, opacity 0.9s ease-in-out;
+}
+
+.project-info {
+  padding: 15px;
+  text-align: left;
+  background: rgb(255,255,255,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3)
+}
+
+.project-info h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.project-info p {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.project-image-container {
+  position: relative;
+}
+
+.project-image-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; /* Gölge yüksekliği */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.details-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background:linear-gradient(45deg, #ff9800, #ff7300);
+  color: rgb(255, 255, 255);
+  border: none;
+  font-size: 1rem;
+  border-radius: 0 0 10px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.details-button:hover {
+  background: linear-gradient(45deg, #ff9800, #ff7300);
+}
+
+/* Overlay Styling */
+.project-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255, 0.1);
+  padding: 20px;
+  z-index: 1000; /* Ensure the overlay is above other elements */
+}
+
+.overlay-content {
+  max-width: 850px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.overlay-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.overlay-content p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.overlay-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.close-button:hover {
+  background-color: #e68900;
+}
+.details-link {
+  text-decoration: none; /* Alt çizgiyi kaldır */
+}
+
+.details-link:focus,
+.details-link:visited {
+  text-decoration: none;
+  color: inherit; /* Link'in rengini buton gibi yap */
+}
+
+.details-button {
+  text-decoration: none; /* Butonun içinde de alt çizgiyi kaldır */
+}

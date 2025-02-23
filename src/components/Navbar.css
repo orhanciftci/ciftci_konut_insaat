@@ -1,0 +1,212 @@
+/* === NAVBAR GENEL STİL === */
+.navbar {
+  background-color: #000000;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+/* === LOGO VE FİRMA ADI === */
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo {
+  height: 120px;
+  margin-right: 10px;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 45px;
+}
+
+.company-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: #D4AF37;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.company-name:hover {
+  color: #ff9800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* === MENÜ BUTONU (Hamburger) === */
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  display: block;
+  z-index: 1010;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.menu-btn.open {
+  transform: rotate(90deg);
+}
+
+/* === YANDA AÇILAN MENÜ (Mobilde) === */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  transition: left 0.3s ease;
+  z-index: 999;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.side-menu .logo {
+  height: 10px;
+  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  
+}
+
+/* === MENÜ ÖĞELERİ === */
+
+
+.side-menu .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.side-menu .menu li {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.side-menu .menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding: 10px 20px;
+}
+
+.side-menu .menu li a:hover {
+  color: #d4af37;
+}
+
+/* === SOSYAL MEDYA İKONLARI === */
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.social-media a {
+  color: white;
+  font-size: 30px;
+  transition: color 0.3s ease-in-out;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.social-media a:hover {
+  color: inherit;
+}
+
+.social-media .facebook:hover {
+  color: #1877F2;
+}
+
+.social-media .instagram:hover {
+  color: #E4405F;
+}
+
+.social-media .youtube:hover {
+  color: #FF0000;
+}
+
+/* === MENÜ LİSTESİ (Masaüstü) === */
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: #ff9800;
+}
+
+/* === MOBİL STİL === */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .side-menu .menu {
+    display: block;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .side-menu .menu li {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .side-menu .menu li a {
+    font-size: 18px;
+    padding: 15px 30px;
+  }
+}
