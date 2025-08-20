@@ -6,7 +6,7 @@ const projectData = [
   { id: 1, name: 'Selenyum Evleri', location: 'Ankara', status: 'completed', image: '/images/selenyumfoto/selenyumevleri.jpg', description: 'Ankara\'da tamamlanan modern bir konut projesi.' },
   { id: 2, name: 'Alya Towers', location: 'Ankara', status: 'completed', image: '/images/alyafoto/alyatower.jpg', description: 'Ankara\'da tamamlanan lüks konut projesi.' },
   { id: 3, name: 'Çiftçiler Sitesi', location: 'Ankara', status: 'completed', image: '/images/elitefoto/elitetower2.jpg', description: 'Ankara\'da tamamlanan yüksek katlı site projesi.' },
-  { id: 4, name: 'Proje 4', location: 'Antalya', status: 'ongoing', image: '/images/project4.jpg', description: 'Antalya\'da sahil kenarında bir resort projesi.' },
+  { id: 4, name: 'Çok Yakında Sizlerle', location: '', status: 'ongoing', image: '/images/project4.jpg', description: '' },
 ];
 
 const Projects = () => {

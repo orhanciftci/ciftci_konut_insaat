@@ -1,36 +1,36 @@
 /* Genel Sayfa Stili */
 .about-page {
   font-family: "Poppins", sans-serif;
-  color: #000000;
+  color: #333333; /* Yazı rengi biraz koyulaştırıldı */
   background: #f8f9fa;
-  padding-bottom: 40px;
-  padding-top: 20px;
+  padding: 40px 20px;
   margin-top: 80px;
   text-align: center;
   font-weight: 500;
-  font-size: 2.2rem;
-
+  font-size: 1.8rem; /* Genel font boyutunu daha küçük yaptık */
+  line-height: 1.6; /* Satır yüksekliği arttırıldı */
+  box-sizing: border-box; /* Padding ve margin hesaplamasında hataları önler */
 }
-
 
 /* İçerik Bölümü */
 .about-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 30px;
   text-align: center;
 }
- 
 
+/* Başlıklar */
 .about-text h3 {
-  font-size: 2.2rem;
+  font-size: 2.2rem; 
   color: #222;
   margin-bottom: 15px;
   font-weight: 700;
+  line-height: 1.4;
 }
 
 .about-text p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #555;
   line-height: 1.8;
   max-width: 900px;
@@ -40,10 +40,11 @@
 /* Kartlar */
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Kart boyutunu daha esnek hale getirdik */
   gap: 30px;
   justify-content: center;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .about-card {
@@ -53,6 +54,8 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%; /* Kart genişliğini sınırladık */
+  box-sizing: border-box;
 }
 
 .about-card:hover {
@@ -62,21 +65,22 @@
 
 .about-card h3 {
   color: #ff9800;
-  font-size: 1.6rem;
+  font-size: 1.4rem; /* Başlık boyutunu küçük tutuyoruz */
   margin-bottom: 14px;
   font-weight: bold;
 }
 
 .about-card p {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Metin boyutunu küçülttük */
   color: #555;
   line-height: 1.7;
+  margin-bottom: 0;
 }
 
 /* Ekibimiz Bölümü */
 .team-section {
-  margin-top: 0px;
-  padding: 10px 0;
+  margin-top: 40px;
+  padding: 40px 20px;
   background: linear-gradient(135deg, #ececec, #ffffff);
   border-radius: 25px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
@@ -119,20 +123,64 @@
 
 /* Mobil Uyumluluk */
 @media (max-width: 768px) {
-  .about-banner {
-    font-size: 2.5rem;
-    height: 250px;
+  .about-page {
+    font-size: 1.6rem; /* Mobilde font boyutunu küçültüyoruz */
   }
 
   .about-text h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .about-text p {
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Metin boyutunu daha uygun hale getiriyoruz */
   }
 
   .team-section h2 {
     font-size: 2.2rem;
+  }
+
+  .about-card h3 {
+    font-size: 1.3rem; /* Kart başlıklarını mobilde biraz daha küçük yapıyoruz */
+  }
+
+  .about-card p {
+    font-size: 1rem; /* Kart metinlerini de daha uygun hale getiriyoruz */
+  }
+
+  /* Kartlar mobilde tam genişlik alacak şekilde ayarlandı */
+  .about-grid {
+    grid-template-columns: 1fr; /* Küçük ekranlarda kartlar tek sütunda olacak */
+  }
+
+  .team-section {
+    padding: 20px 15px;
+  }
+
+  .team-image {
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .team-content p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablet ve Daha Büyük Ekranlar İçin */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .about-page {
+    font-size: 1.8rem; /* Tablet için ideal font boyutu */
+  }
+
+  .about-card {
+    padding: 30px;
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Tabletlerde daha geniş kartlar */
+  }
+
+  .team-section h2 {
+    font-size: 2.4rem; /* Tablet için biraz daha büyük başlık */
   }
 }

@@ -46,8 +46,6 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
   gap: 15px;
   width: 48%;
   max-width: 500px;
@@ -56,20 +54,6 @@
 .contact-info {
   align-items: flex-start;
   text-align: left;
-}
-
-.info-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-}
-
-.info-icon {
-  color: #ff9800;
-  font-size: 24px;
-  min-width: 30px;
-  text-align: center;
 }
 
 .contact-form {
@@ -88,6 +72,8 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-family: inherit;
+  font-size: 16px;
 }
 
 .contact-form button {
@@ -99,12 +85,32 @@
   cursor: pointer;
   width: 100%;
   max-width: 200px;
+  transition: background-color 0.3s ease;
 }
 
-.contact-form button:hover {
+.contact-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.contact-form button:hover:not(:disabled) {
   background-color: #d55013;
 }
 
+/* Başarılı veya hatalı form mesajları */
+.form-success {
+  color: green;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.form-error {
+  color: red;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Harita */
 .map-container {
   width: 100%;
   height: 500px;
@@ -119,6 +125,57 @@
   height: 300px;
   border: 0;
   border-radius: 10px;
+}
+
+/* Tooltip özellikli bilgi ikonları */
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.info-icon {
+  color: #ff9800;
+  font-size: 24px;
+  min-width: 30px;
+  text-align: center;
+}
+
+.info-item:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1.1);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 150%;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent;
 }
 
 /* Mobil Görünüm */
@@ -136,6 +193,10 @@
     text-align: center;
   }
 
+  .contact-form label {
+    text-align: center;
+  }
+
   .map-container {
     width: 100%;
   }
@@ -143,42 +204,4 @@
   .contact-map {
     width: 100%;
   }
-}
-.info-item {
-  position: relative;
-  cursor: pointer;
-}
-
-.info-item:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-  transform: scale(1.1); /* Slight growth effect */
-  transition: opacity 0.2s ease, transform 0.2s ease; /* Faster transition */
-}
-
-.tooltip {
-  visibility: hidden;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  text-align: center;
-  padding: 5px 10px;
-  border-radius: 5px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 150%;
-  white-space: nowrap;
-  transition: opacity 0.2s ease, transform 0.2s ease; /* Faster transition */
-}
-
-.tooltip::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent;
 }

@@ -38,7 +38,7 @@ const Navbar = () => {
       {/* Logo ve Firma İsmi Ortalanmış */}
       <Link to="/" className="brand">
         <img src="/logo/ciftcilogo.png" alt="" className="logo" />
-        <span className="company-name">ÇİFTÇİ PRESTİGE GROUP</span>
+        <span className="company-name">ÇİFTÇİ KONUT İNŞAAT</span>
       </Link>
 
       {/* Yanda Açılan Menü */}
@@ -50,6 +50,8 @@ const Navbar = () => {
           <li><Link to="/services" onClick={() => setMenuOpen(false)}>Hizmetler</Link></li>
           <li><Link to="/about" onClick={() => setMenuOpen(false)}>Hakkında</Link></li>
           <li><Link to="/contact" onClick={() => setMenuOpen(false)}>İletişim</Link></li>
+         {/* <li><Link to="/chatbot">Asistan</Link></li> */}
+
         </ul>
 
         {/* Sosyal Medya Bağlantıları */}

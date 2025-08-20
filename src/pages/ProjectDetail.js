@@ -4,14 +4,42 @@ import { FaInfoCircle, FaImages, FaMapMarkerAlt, FaExpand } from "react-icons/fa
 import "./ProjectDetail.css";
 
 const projectData = [
-  { id: 1, name: "Proje 1", location: "Ankara", status: "tamamlandı", image: "/images/selenyumfoto/selenyumevleri.jpg", 
-    description: "Ankara'da tamamlanan modern bir konut projesi.", gallery: ["/images/selenyumfoto/selenyumevleri.jpg", "/images/konut2.jpg", "/images/konut3.jpg"] },
-  { id: 2, name: "Proje 2", location: "Ankara", status: "tamamlandı", image: "/images/alyafoto/alyatower.jpg", 
-    description: "Ankara'da doğa manzaralı yüksek katlı konut projesi.", gallery: ["/images/alyafoto/alyatower.jpg", "/images/alyafoto/alyatower2.jpg", "/images/alyafoto/alyafoto5.jpg"] },
-  { id: 3, name: "Proje 3", location: "Ankara", status: "tamamlandı", image: "/images/elitefoto/elitetower2.jpg", 
-    description: "Ankara'da yüksek katlı rezidans projesi.", gallery: ["/images/elitefoto/elitetower1.jpg", "/images/elitefoto/elitetower2.jpg", "/images/elitefoto/elitetower3.jpg", "/images/elitefoto/elitetower4.jpg"] },
-  { id: 4, name: "Proje 4", location: "Ankara", status: "devam ediyor", image: "/images/project4.jpg", 
-    description: "Ankara'da yükselen bölgesinde prestijli site projesi.", gallery: ["/images/site1.jpg", "/images/site2.jpg", "/images/site3.jpg"] },
+  {
+    id: 1,
+    name: "Proje 1",
+    location: "Ankara",
+    status: "tamamlandı",
+    image: "/images/selenyumfoto/selenyumevleri.jpg",
+    description: "Selenyum Evleri, modern yaşamı doğayla buluşturan özgün mimarisiyle dikkat çekiyor. Ankara’nın yükselen bölgelerinden birinde konumlanan proje, aileler için konforlu ve güvenli bir yaşam alanı sunuyor. Geniş peyzaj alanları, ferah daire tipleri ve sosyal donatılarıyla sakinlerine huzurlu bir hayat vadediyor.",
+    gallery: ["/images/selenyumfoto/selenyumevleri.jpg", "/images/konut2.jpg", "/images/konut3.jpg"]
+  },
+  {
+    id: 2,
+    name: "Proje 2",
+    location: "Ankara",
+    status: "tamamlandı",
+    image: "/images/alyafoto/alyatower.jpg",
+    description: "Ankara Mamak Yeni Bayındır Mahallesi'nde yükselen Alya Tower, bölgenin çehresini değiştiren prestijli bir rezidans projesidir. Toplamda 180 adet 2+1, 3+1 ve 4+1 daire ile 14 adet ticari alandan oluşan proje, modern şehir yaşamını konforla buluşturuyor. Geniş balkonlar, akıllı bina teknolojisi ve zengin sosyal alanlarıyla Alya Tower, yeni nesil yaşamın merkezinde yer alıyor.",
+    gallery: ["/images/alyafoto/alyatower.jpg", "/images/alyafoto/alyatower2.jpg", "/images/alyafoto/alyatower3.jpg"]
+  },
+  {
+    id: 3,
+    name: "Proje 3",
+    location: "Ankara",
+    status: "tamamlandı",
+    image: "/images/elitefoto/elitetower2.jpg",
+    description: "Ankara Mamak Cengizhan Mahallesi'nde konumlanan Elite Tower, seçkin bir yaşam anlayışını yansıtan butik bir site projesidir. Toplam 48 daireden oluşan projede 3+1, 4+1 ve 5+1 geniş ve ferah yaşam alanları sunulmaktadır. Modern mimari detaylar, geniş yeşil alanlar ve güvenlikli site yaşamı ile Elite Tower, aile yaşamı için ideal bir tercih sunmaktadır.",
+    gallery: ["/images/elitefoto/elitetower1.jpg", "/images/elitefoto/elitetower2.jpg", "/images/elitefoto/elitetower3.jpg", "/images/elitefoto/elitetower4.jpg"]
+  },
+  {
+    id: 4,
+    name: "Yeni Proje",
+    location: "Ankara",
+    status: "devam ediyor",
+    image: "/images/project4.jpg",
+    description: "Yeni projelerimizle çok yakında sizlerle birlikte olacağız. Kalite, estetik ve fonksiyonelliği bir araya getiren mimari anlayışımızla, beklentilerinizi aşacak yeni yaşam alanları tasarlıyoruz. Takipte kalın; hayalinizdeki yaşam çok yakında gerçeğe dönüşüyor.",
+    gallery: ["/images/site1.jpg", "/images/site2.jpg", "/images/site3.jpg"]
+  },
 ];
 
 const ProjectDetail = () => {

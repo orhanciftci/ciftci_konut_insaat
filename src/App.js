@@ -7,15 +7,14 @@ import Projects from './pages/Projects';
 import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
-
 import ProjectDetail from './pages/ProjectDetail';
+import ScrollToTop from './components/ScrollToTop'; // Yeni eklenen bileşeni import ettik
 import './App.css';
-
+import ChatBot from "./components/ChatBot";
 
 const App = () => {
   const [isBottom, setIsBottom] = useState(false);
 
-  // Sayfanın en altına ulaşılıp ulaşılmadığını kontrol eden fonksiyon
   const checkScroll = () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
       setIsBottom(true);
@@ -31,6 +30,7 @@ const App = () => {
 
   return (
     <div className="app">
+      <ScrollToTop /> {/* Sayfa değiştiğinde en üste kaydırma */}
       <Navbar />
       <div className="content-wrap">
         <main>
@@ -41,6 +41,7 @@ const App = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/chatbot" element={<ChatBot />} />
           </Routes>
         </main>
       </div>

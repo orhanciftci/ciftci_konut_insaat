@@ -97,7 +97,7 @@
   position: relative;
   width: 99%;
   max-width: 1000px;
-  height: 1000px;
+  height: 800px;
   margin: auto;
   background: linear-gradient(135deg, #ddd, #ccc);
   border-radius: 12px;
@@ -137,8 +137,8 @@
 .fullscreen .gallery-container {
   width: 90vw;
   height: 90vh;
-  max-width: 1000px;
-  max-height: 1200px;
+  max-width: 900px;
+  max-height: 1000px;
 }
 
 /* Galeri Butonları */

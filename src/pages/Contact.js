@@ -8,15 +8,39 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle"); // idle, loading, success, error
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Mesajınız başarıyla gönderildi!");
-    setFormData({ name: "", email: "", message: "" });
+    setStatus("loading");
+
+    try {
+      const response = await fetch("https://formspree.io/f/mvgkjpba", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        const data = await response.json();
+        setStatus("error");
+        setErrorMessage(data?.error || "Bilinmeyen bir hata oluştu.");
+      }
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage("Sunucuya bağlanılamadı.");
+    }
   };
 
   return (
@@ -29,22 +53,22 @@ const Contact = () => {
           {/* İletişim Bilgileri */}
           <div className="contact-info">
             <div className="info-item">
-              <a href="Çiftçiler Grup İnşaat, Şahintepe, 657. Sk 2-A, 06620 Mamak/Ankara" target="_blank" rel="noopener noreferrer" className="info-link">
+              <a href="https://maps.google.com/?q=Çiftçiler Grup İnşaat, Şahintepe, 657. Sk 2-A, 06620 Mamak/Ankara" target="_blank" rel="noopener noreferrer" className="info-link">
                 <FaMapMarkerAlt className="info-icon" title="Yol Tarifi Al" />
               </a>
-              <p>Mamak,Ankara</p>
+              <p>Mamak, Ankara</p>
             </div>
             <div className="info-item">
-              <a href="tel:+90 534 858 65 65" className="info-link">
+              <a href="tel:+905348586565" className="info-link">
                 <FaPhone className="info-icon" title="Bizi Arayın" />
               </a>
-              <p>+90 534 858 65 65 </p>
+              <p>+90 534 858 65 65</p>
             </div>
             <div className="info-item">
-              <a href="mailto:info@ciftcioglugrup.com" className="info-link">
+              <a href="mailto:info@ciftcikonut.com" className="info-link">
                 <FaEnvelope className="info-icon" title="Bize Mail Atın" />
               </a>
-              <p>info@ciftcioglugrup.com</p>
+              <p>info@ciftcikonut.com</p>
             </div>
           </div>
 
@@ -59,7 +83,12 @@ const Contact = () => {
             <label>Mesajınız</label>
             <textarea name="message" rows="4" value={formData.message} onChange={handleChange} required />
 
-            <button type="submit">Gönder</button>
+            <button type="submit" disabled={status === "loading"}>
+              {status === "loading" ? "Gönderiliyor..." : "Gönder"}
+            </button>
+
+            {status === "success" && <p className="success-message">✔️ Mesajınız başarıyla gönderildi!</p>}
+            {status === "error" && <p className="error-message">❌ Hata: {errorMessage}</p>}
           </form>
         </div>
 
